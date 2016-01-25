@@ -25,13 +25,17 @@ public class ContactServiceImpl implements ContactService {
         mappedContact.setName(contact.getName());
         mappedContact.setPhone(contact.getPhone());
         mappedContact.setEmail(contact.getEmail());
-        System.out.println(mappedContact);
         contactDao.save(mappedContact);
     }
 
     @Override
+    @Transactional
     public void deleteContact(Contact contact) {
-
+//        MappedContact mappedContact = new MappedContact();
+//        mappedContact.setName(contact.getName());
+//        mappedContact.setPhone(contact.getPhone());
+//        mappedContact.setEmail(contact.getEmail());
+        contactDao.delleteContact(contact.getEmail());
     }
 
     @Override
@@ -52,6 +56,25 @@ public class ContactServiceImpl implements ContactService {
             contacts.add(contact);
         }
         return contacts;
+    }
+
+    @Override
+    @Transactional
+    public Contact getContact(String email){
+        Contact contact = new Contact();
+        MappedContact mappedContact = contactDao.getContact(email);
+
+        contact.setName(mappedContact.getName());
+        contact.setEmail(mappedContact.getEmail());
+        contact.setPhone(mappedContact.getPhone());
+
+        return contact;
+    }
+
+    @Override
+    @Transactional
+    public void update(String name, String phone, String email) {
+        contactDao.update( name, phone, email);
     }
 
     public void setContactDao(ContactDao contactDao) {

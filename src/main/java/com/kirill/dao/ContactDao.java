@@ -11,4 +11,9 @@ public interface ContactDao {
 
     List<MappedContact> findAll();
 
+    MappedContact getContact(String email);
+
+    void delleteContact(String email);
+
+    void update(String name, String phone, String email);
 }

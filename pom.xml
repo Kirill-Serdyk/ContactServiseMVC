@@ -24,6 +24,7 @@
                 <version>2.6</version>
                 <configuration>
                     <warName>ContactService</warName>
+                    <webappDirectory>C:\Program Files\Apache-TomCat-9.0.0.M1\webapps\ContactService</webappDirectory>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>

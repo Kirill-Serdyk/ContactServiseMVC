@@ -14,4 +14,7 @@ public interface ContactService {
 
     List<Contact> getAllContacts();
 
+    Contact getContact(String email);
+
+    void update(String name, String phone, String email);
 }

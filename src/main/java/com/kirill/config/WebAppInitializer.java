@@ -37,7 +37,7 @@ import javax.servlet.ServletRegistration;
 
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-    private static final String MAPPING_URL = "/*";
+    private static final String MAPPING_URL = "/";
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
